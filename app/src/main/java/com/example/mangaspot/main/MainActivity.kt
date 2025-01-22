@@ -24,8 +24,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.bottom_bar.ui.BottomBar
-import com.example.core.utils.NavigationFactory
 import com.example.core.utils.dispatchers.AppDispatchers
+import com.example.core.utils.navigation.NavigationFactory
 import com.example.core.utils.navigation.navigateSingle
 import com.example.core.utils.theme.MangaSpotTheme
 import com.example.library_api.LibraryFeatureApi

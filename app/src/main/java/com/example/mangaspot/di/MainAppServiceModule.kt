@@ -1,7 +1,7 @@
 package com.example.mangaspot.di
 
 import android.content.Context
-import com.example.core.utils.NavigationFactory
+import com.example.core.utils.navigation.NavigationFactory
 import com.example.library.api.LibraryFeatureApiImpl
 import dagger.Module
 import dagger.Provides

@@ -354,3 +354,11 @@ w
 G.idea/sonarlint/issuestore/d/7/d72846b7b418aa17de692d1ccf924c738cf8dbe5,e/6/e672065793d1b57768f3fc070889b9e21793bca6
 M
 feature/bottom_bar/.gitignore,0/b/0bd48437fb7d968a2f51ed411031fb6a1481f018
+x
+Hcore/src/main/java/com/example/core/utils/di/InjectDependencyProvider.kt,a/a/aafb73d4646402f22bd697a4982e1c89958d1b0b
+Y
+)core/src/main/java/anim/LocalAnimation.kt,4/f/4fa793ea988f3902705eae80ba0f34d6eb55e598
+p
+@core/src/main/java/com/example/core/utils/anim/LocalAnimation.kt,5/5/5550a734a92a942bfef96ccca5ff582ab5e8f352
+y
+Icore/src/main/java/com/example/core/utils/navigation/NavigationFactory.kt,6/a/6a99761c2b05bb27cff66bc8cb05e538dbc5ed9b

@@ -9,10 +9,10 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.example.core.utils.AnimationParams
-import com.example.core.utils.LocalAnimation
-import com.example.core.utils.NavigationFactory
-import com.example.core.utils.inject
+import com.example.core.utils.anim.AnimationParams
+import com.example.core.utils.anim.LocalAnimation
+import com.example.core.utils.di.inject
+import com.example.core.utils.navigation.NavigationFactory
 import com.example.library.di.DependencyProvider
 import com.example.library.ui.CamListViewModel
 import com.example.library.ui.LibraryScreen
@@ -47,6 +47,6 @@ class LibraryFeatureApiImpl(
     }
 
     override fun screen(builder: NavGraphBuilder, navController: NavHostController) {
-        
+
     }
 }

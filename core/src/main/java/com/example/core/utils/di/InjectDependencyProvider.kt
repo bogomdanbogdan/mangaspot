@@ -1,4 +1,4 @@
-package com.example.core.utils
+package com.example.core.utils.di
 
 import android.content.Context
 import dagger.hilt.android.EntryPointAccessors
