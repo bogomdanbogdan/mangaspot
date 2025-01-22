@@ -23,8 +23,8 @@ class LibraryFeatureApiImpl(
 ) : LibraryFeatureApi, NavigationFactory {
     private val di = context.inject(DependencyProvider::class.java)
 
-    override val route: String = "home_graph"
-    private val homeDestination = "home"
+    override val route: String = "library_graph"
+    private val homeDestination = "library"
 
     @OptIn(ExperimentalSharedTransitionApi::class)
     override fun SharedTransitionScope.screen(
@@ -36,7 +36,7 @@ class LibraryFeatureApiImpl(
                 val camListViewModel: CamListViewModel = hiltViewModel()
 
                 CompositionLocalProvider(
-                    LocalAnimation provides AnimationParams("collection"),
+                    LocalAnimation provides AnimationParams("library"),
                 ) {
                     LibraryScreen(
                         camListViewModel = camListViewModel
