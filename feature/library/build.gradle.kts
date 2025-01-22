@@ -42,13 +42,18 @@ android {
 }
 
 dependencies {
+    implementation(project(":core"))
+    implementation(project(":feature:search_api"))
+    implementation(project(":feature:library_api"))
 
     //hilt
     implementation(libs.hilt.android)
-    implementation(project(":core"))
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.material3.android)
+    implementation(project(":feature:search"))
     kapt(libs.hilt.android.compiler)
+
+    implementation(libs.coil.compose)
 
 
     implementation(libs.androidx.animation.android)
@@ -58,7 +63,6 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(project(":feature:library_api"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
