@@ -10,5 +10,4 @@ class MainViewModel : ViewModel() {
     private val _state = MutableStateFlow(MainAppState())
     val state = _state.asStateFlow()
 
-
 }

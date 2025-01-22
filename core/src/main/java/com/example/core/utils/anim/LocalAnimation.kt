@@ -1,4 +1,4 @@
-package com.example.core.utils
+package com.example.core.utils.anim
 
 import androidx.compose.runtime.compositionLocalOf
 
