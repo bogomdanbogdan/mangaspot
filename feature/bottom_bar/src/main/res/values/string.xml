@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="library_tab_name">Library</string>
+    <string name="search_tab_name">Search</string>
+    <string name="settings_tab_name">Settings</string>
+    <string name="bottom_bar_label">Bottom bar</string>
+</resources>

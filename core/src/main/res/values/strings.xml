@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_theme_day_label">Day</string>
+    <string name="settings_theme_night_label">Night</string>
+    <string name="settings_theme_auto_label">Automatically</string>
+</resources>
