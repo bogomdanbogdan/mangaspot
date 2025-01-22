@@ -31,6 +31,8 @@ import com.example.core.utils.theme.MangaSpotTheme
 import com.example.library_api.LibraryFeatureApi
 import com.example.mangaspot.main.nav_graph.AppNavGraph
 import com.example.mangaspot.model.NavigationArgs
+import com.example.search_api.SearchFeatureApi
+import com.example.settings_api.SettingsFeatureApi
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -43,6 +45,12 @@ class MainActivity : ComponentActivity() {
 
     @Inject
     lateinit var libraryFeatureApi: LibraryFeatureApi
+
+    @Inject
+    lateinit var searchFeatureApi: SearchFeatureApi
+
+    @Inject
+    lateinit var settingsFeatureApi: SettingsFeatureApi
 
     private lateinit var viewModel: MainViewModel
 
@@ -93,11 +101,12 @@ class MainActivity : ComponentActivity() {
                                 startDestination = libraryFeatureApi.route,
                                 modifier = Modifier.weight(1f),
                                 libraryFeatureApi = libraryFeatureApi,
+                                searchFeatureApi = searchFeatureApi,
+                                settingsFeatureApi = settingsFeatureApi,
                             )
                             BottomBar(
                                 navController = navController,
                                 viewModel = hiltViewModel(),
-                                modifier = Modifier
                             )
                         }
                     }

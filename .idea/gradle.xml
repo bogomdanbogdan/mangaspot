@@ -15,6 +15,10 @@
             <option value="$PROJECT_DIR$/feature/bottom_bar" />
             <option value="$PROJECT_DIR$/feature/library" />
             <option value="$PROJECT_DIR$/feature/library_api" />
+            <option value="$PROJECT_DIR$/feature/search" />
+            <option value="$PROJECT_DIR$/feature/search_api" />
+            <option value="$PROJECT_DIR$/feature/settings" />
+            <option value="$PROJECT_DIR$/feature/settings_api" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

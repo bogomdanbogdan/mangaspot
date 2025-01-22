@@ -47,6 +47,12 @@ android {
 
 dependencies {
     implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.androidx.ui.graphics.v1xx)
+    implementation(libs.androidx.vectordrawable.animated)
+
+    implementation(libs.androidx.animation)
+    implementation(libs.androidx.ui.graphics)
+
     //hilt
     implementation(libs.hilt.android)
     implementation(project(":core"))
@@ -56,6 +62,10 @@ dependencies {
     implementation(project(":feature:library"))
     implementation(libs.androidx.core.splashscreen)
     implementation(project(":feature:bottom_bar"))
+    implementation(project(":feature:search"))
+    implementation(project(":feature:search_api"))
+    implementation(project(":feature:settings"))
+    implementation(project(":feature:settings_api"))
     kapt(libs.hilt.android.compiler)
 
 

@@ -3,6 +3,8 @@ package com.example.mangaspot.di
 import android.content.Context
 import com.example.core.utils.navigation.NavigationFactory
 import com.example.library.api.LibraryFeatureApiImpl
+import com.example.search.api.SearchFeatureApiImpl
+import com.example.settings.api.SettingsFeatureApiImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,7 +19,19 @@ class MainAppServiceModule {
 
     @Provides
     @IntoSet
-    fun provideProfileNavigationFactory(@ApplicationContext context: Context): NavigationFactory {
+    fun provideLibraryNavigationFactory(@ApplicationContext context: Context): NavigationFactory {
         return LibraryFeatureApiImpl(context)
+    }
+
+    @Provides
+    @IntoSet
+    fun provideSearchNavigationFactory(@ApplicationContext context: Context): NavigationFactory {
+        return SearchFeatureApiImpl(context)
+    }
+
+    @Provides
+    @IntoSet
+    fun provideSettingsNavigationFactory(@ApplicationContext context: Context): NavigationFactory {
+        return SettingsFeatureApiImpl(context)
     }
 }

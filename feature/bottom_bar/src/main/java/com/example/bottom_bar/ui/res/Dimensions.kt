@@ -7,9 +7,7 @@ import androidx.compose.ui.unit.dp
 internal val LocalDimen = compositionLocalOf { Dimensions() }
 
 internal data class Dimensions(
-    val barHeight: Dp = 56.dp,
-    val barShadow: Dp = 6.dp,
-    val iconSize: Dp = 22.dp,
-    val iconBarBottomPadding: Dp = 12.dp,
-    val textBarVerticalPadding: Dp = 6.dp,
+    val barHeight: Dp = 60.dp,
+    val iconTextPadding: Dp = 4.dp,
+    val iconSize: Dp = 26.dp,
 )

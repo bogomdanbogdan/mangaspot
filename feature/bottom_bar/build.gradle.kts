@@ -50,6 +50,8 @@ dependencies {
     implementation(libs.androidx.material3.android)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.ui.tooling.preview.android)
+    implementation(project(":feature:search_api"))
+    implementation(project(":feature:settings_api"))
     kapt(libs.hilt.android.compiler)
 
     implementation(libs.androidx.core.ktx)

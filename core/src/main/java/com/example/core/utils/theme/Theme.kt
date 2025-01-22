@@ -29,7 +29,7 @@ private val LightColorScheme = lightColorScheme(
     primary = BlueAccent,
     onPrimary = DarkClear,
     secondary = BlueLight,
-    surface = WhiteClear,
+    surface = BlueLight,
     onSurface = DarkClear,
     background = WhiteClear,
     surfaceVariant = WhiteClear,
@@ -40,9 +40,8 @@ private val LightColorScheme = lightColorScheme(
 
 @Composable
 fun MangaSpotTheme(
-    context: Context = LocalContext.current, // Передача контекста
+    context: Context = LocalContext.current,
     currentTheme: ApplicationThemes = ApplicationThemes.AUTOMATICALLY,
-    // Dynamic color is available on Android 12+
     dynamicColor: Boolean = false,
     content: @Composable () -> Unit,
 ) {
@@ -52,7 +51,6 @@ fun MangaSpotTheme(
         ApplicationThemes.DAY -> LightColorScheme
         ApplicationThemes.NIGHT -> DarkColorScheme
         ApplicationThemes.AUTOMATICALLY -> if (isAutomaticallyDark) DarkColorScheme else LightColorScheme
-        else -> LightColorScheme
     }
 
     val colorScheme = if (dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
@@ -69,10 +67,12 @@ fun MangaSpotTheme(
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
-            window.statusBarColor = colorScheme.primary.toArgb()
+            window.statusBarColor = colorScheme.background.toArgb()
+            window.navigationBarColor = colorScheme.onPrimary.toArgb()
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars =
-                isAutomaticallyDark
+                !isAutomaticallyDark
         }
+
     }
 
     MaterialTheme(

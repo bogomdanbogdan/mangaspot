@@ -10,6 +10,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.example.core.utils.navigation.NavigationFactory
 import com.example.library_api.LibraryFeatureApi
+import com.example.search_api.SearchFeatureApi
+import com.example.settings_api.SettingsFeatureApi
 
 @OptIn(ExperimentalSharedTransitionApi::class)
 @Composable
@@ -18,6 +20,8 @@ fun AppNavGraph(
     navController: NavHostController,
     navigationFactories: Set<NavigationFactory>,
     libraryFeatureApi: LibraryFeatureApi,
+    searchFeatureApi: SearchFeatureApi,
+    settingsFeatureApi: SettingsFeatureApi,
     startDestination: String,
     onDestinationChange: (String) -> Unit = {}
 ) {
@@ -39,6 +43,8 @@ fun AppNavGraph(
             }
 
             with(libraryFeatureApi) { screen(builder, navController) }
+            with(searchFeatureApi) { screen(builder, navController) }
+            with(settingsFeatureApi) { screen(builder, navController) }
         }
     }
 
