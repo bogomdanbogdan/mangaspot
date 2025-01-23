@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.library"
+    namespace = "com.example.manga_details"
     compileSdk = 35
 
     defaultConfig {
@@ -33,34 +33,23 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "2.0.0"
-    }
 }
 
 dependencies {
     implementation(project(":core"))
-    implementation(project(":feature:search_api"))
-    implementation(project(":feature:library_api"))
 
     //hilt
     implementation(libs.hilt.android)
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.material3.android)
-    implementation(project(":feature:search"))
     implementation(project(":feature:manga_details_api"))
-    implementation(project(":feature:manga_details"))
+    implementation(project(":feature:data"))
     kapt(libs.hilt.android.compiler)
 
     implementation(libs.coil.compose)
 
-
     implementation(libs.androidx.animation.android)
     implementation(libs.androidx.navigation.common.ktx)
-
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -68,7 +57,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
 
     // Jetpack Compose Core
     implementation(libs.androidx.ui)
