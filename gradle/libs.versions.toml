@@ -1,6 +1,7 @@
 [versions]
 activityCompose = "1.10.0"
 agp = "8.1.2"
+coilCompose = "2.7.0"
 hiltAndroid = "2.50"
 hiltAndroidCompiler = "2.50"
 hiltAndroidVersion = "2.50"
@@ -40,6 +41,7 @@ androidx-ui-graphics-v1xx = { module = "androidx.compose.ui:ui-graphics", versio
 androidx-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "ui" }
 androidx-vectordrawable-animated = { module = "androidx.vectordrawable:vectordrawable-animated", version.ref = "vectordrawableAnimated" }
 androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workRuntimeKtx" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroidCompiler" }
 hilt-android-v248 = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroidVersion" }

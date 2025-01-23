@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="common_library">Library</string>
+    <string name="search_icon">Search Icon</string>
+    <string name="search_dots">Search…</string>
+    <string name="search">Search</string>
+    <string name="sad_face">Sad Face</string>
+    <string name="your_library_is_empty_add_manga_from_search_tab">Your library is empty.\nAdd manga from search tab</string>
+</resources>
