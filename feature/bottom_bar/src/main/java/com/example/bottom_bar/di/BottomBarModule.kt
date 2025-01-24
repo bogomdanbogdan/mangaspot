@@ -18,7 +18,7 @@ class BottomBarModule {
     fun provideBottomTabs(
         libraryFeatureApi: LibraryFeatureApi,
         searchFeatureApi: SearchFeatureApi,
-        settingsFeatureApi: SettingsFeatureApi,
+        settingsFeatureApi: SettingsFeatureApi
     ): BottomTabs {
         return BottomTabsImpl(
             libraryFeatureApi,

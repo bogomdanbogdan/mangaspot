@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 
 interface LibraryFeatureApi {
     val route: String
+    val homeDestination: String
 
     fun screen(builder: NavGraphBuilder, navController: NavHostController)
 }

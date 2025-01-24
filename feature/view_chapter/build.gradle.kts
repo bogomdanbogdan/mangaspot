@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
@@ -7,17 +7,14 @@ plugins {
 }
 
 android {
-    namespace = "com.example.mangaspot"
+    namespace = "com.example.view_chapter"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.mangaspot"
         minSdk = 26
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -36,55 +33,34 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "2.0.0"
-    }
-
 }
 
 dependencies {
-    implementation(libs.androidx.work.runtime.ktx)
-    implementation(libs.androidx.ui.graphics.v1xx)
-    implementation(libs.androidx.vectordrawable.animated)
+    implementation(project(":core"))
 
-    implementation(libs.androidx.animation)
-    implementation(libs.androidx.ui.graphics)
+    //pager
+    implementation(libs.accompanist.pager)
+    implementation(libs.accompanist.pager.indicators)
 
     //hilt
     implementation(libs.hilt.android)
-    implementation(project(":core"))
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.material3.android)
-    implementation(libs.androidx.hilt.work)
-    implementation(project(":feature:library"))
-    implementation(libs.androidx.core.splashscreen)
-    implementation(project(":feature:bottom_bar"))
-    implementation(project(":feature:search"))
-    implementation(project(":feature:search_api"))
-    implementation(project(":feature:settings"))
-    implementation(project(":feature:settings_api"))
-    implementation(project(":feature:manga_details_api"))
-    implementation(project(":feature:manga_details"))
+    implementation(project(":feature:data"))
     implementation(project(":feature:view_chapter_api"))
-    implementation(project(":feature:view_chapter"))
     kapt(libs.hilt.android.compiler)
 
+    implementation(libs.coil.compose)
 
     implementation(libs.androidx.animation.android)
     implementation(libs.androidx.navigation.common.ktx)
 
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(project(":feature:library_api"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
 
     // Jetpack Compose Core
     implementation(libs.androidx.ui)

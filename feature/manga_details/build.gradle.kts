@@ -44,6 +44,7 @@ dependencies {
     implementation(libs.androidx.material3.android)
     implementation(project(":feature:manga_details_api"))
     implementation(project(":feature:data"))
+    implementation(project(":feature:view_chapter_api"))
     kapt(libs.hilt.android.compiler)
 
     implementation(libs.coil.compose)

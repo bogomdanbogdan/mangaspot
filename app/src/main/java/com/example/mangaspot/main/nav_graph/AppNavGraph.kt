@@ -13,6 +13,7 @@ import com.example.library_api.LibraryFeatureApi
 import com.example.manga_details_api.MangaDetailsFeatureApi
 import com.example.search_api.SearchFeatureApi
 import com.example.settings_api.SettingsFeatureApi
+import com.example.view_chapter_api.ViewChapterFeatureApi
 
 @OptIn(ExperimentalSharedTransitionApi::class)
 @Composable
@@ -24,6 +25,7 @@ fun AppNavGraph(
     searchFeatureApi: SearchFeatureApi,
     settingsFeatureApi: SettingsFeatureApi,
     mangaDetailsFeatureApi: MangaDetailsFeatureApi,
+    viewChapterFeatureApi: ViewChapterFeatureApi,
     startDestination: String,
     onDestinationChange: (String) -> Unit = {}
 ) {
@@ -48,6 +50,7 @@ fun AppNavGraph(
             with(searchFeatureApi) { screen(builder, navController) }
             with(settingsFeatureApi) { screen(builder, navController) }
             with(mangaDetailsFeatureApi) { screen(builder, navController) }
+            with(viewChapterFeatureApi) { screen(builder, navController) }
         }
     }
 

@@ -1,6 +1,7 @@
 package com.example.manga_details.ui.chapters
 
 import android.content.Context
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -21,11 +22,12 @@ import com.example.data.model.chapter.Chapter
 import com.example.manga_details.R
 
 @Composable
-fun ChapterListItem(context: Context, chapter: Chapter) {
+fun ChapterListItem(context: Context, chapter: Chapter, onChapterClicked: (Chapter) -> Unit) {
     Row(
         Modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp),
+            .padding(horizontal = 16.dp)
+            .clickable { onChapterClicked.invoke(chapter) },
         verticalAlignment = Alignment.CenterVertically
     ) {
         Column(Modifier.weight(1f)) {
