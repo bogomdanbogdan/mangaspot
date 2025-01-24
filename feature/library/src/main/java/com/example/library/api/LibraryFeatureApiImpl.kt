@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.core.utils.di.inject
 import com.example.core.utils.navigation.NavigationFactory
+import com.example.core.utils.navigation.navigateSingle
 import com.example.library.di.DependencyProvider
 import com.example.library.ui.CamListViewModel
 import com.example.library.ui.LibraryScreen
@@ -32,6 +33,9 @@ class LibraryFeatureApiImpl(
                     camListViewModel = camListViewModel,
                     onSearchPlaceholderClick = {
                         navController.navigate(di.searchFeatureApi.route)
+                    },
+                    onMangaSelected = {
+                        navController.navigateSingle(di.mangaDetailsApi.route)
                     }
                 )
             }

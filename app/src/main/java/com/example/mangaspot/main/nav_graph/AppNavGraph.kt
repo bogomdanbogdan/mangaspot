@@ -10,6 +10,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.example.core.utils.navigation.NavigationFactory
 import com.example.library_api.LibraryFeatureApi
+import com.example.manga_details_api.MangaDetailsFeatureApi
 import com.example.search_api.SearchFeatureApi
 import com.example.settings_api.SettingsFeatureApi
 
@@ -22,6 +23,7 @@ fun AppNavGraph(
     libraryFeatureApi: LibraryFeatureApi,
     searchFeatureApi: SearchFeatureApi,
     settingsFeatureApi: SettingsFeatureApi,
+    mangaDetailsFeatureApi: MangaDetailsFeatureApi,
     startDestination: String,
     onDestinationChange: (String) -> Unit = {}
 ) {
@@ -45,6 +47,7 @@ fun AppNavGraph(
             with(libraryFeatureApi) { screen(builder, navController) }
             with(searchFeatureApi) { screen(builder, navController) }
             with(settingsFeatureApi) { screen(builder, navController) }
+            with(mangaDetailsFeatureApi) { screen(builder, navController) }
         }
     }
 

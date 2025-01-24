@@ -66,6 +66,8 @@ dependencies {
     implementation(project(":feature:search_api"))
     implementation(project(":feature:settings"))
     implementation(project(":feature:settings_api"))
+    implementation(project(":feature:manga_details_api"))
+    implementation(project(":feature:manga_details"))
     kapt(libs.hilt.android.compiler)
 
 

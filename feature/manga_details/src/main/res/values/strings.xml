@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="back">Back</string>
+    <string name="share">Share</string>
+    <string name="more">More</string>
+    <string name="add_to_library">Add to library</string>
+    <string name="read">Read</string>
+    <string name="chapters_placeholder">%1$s Chapters</string>
+    <string name="chapter_placeholder">Chapter %1$s</string>
+    <string name="added_to_library">Added to library</string>
+    <string name="download">Download</string>
+    <string name="manga_added_to_library">Manga added to library 🥳</string>
+    <string name="manga_removed_from_favourites">Manga removed from favourites 😣</string>
+</resources>

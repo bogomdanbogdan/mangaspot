@@ -26,6 +26,7 @@ import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.library.R
+import com.example.library.model.Manga
 import com.example.library.ui.empty.EmptyLibraryScreen
 import com.example.library.ui.manga.MangaGrid
 
@@ -33,7 +34,8 @@ import com.example.library.ui.manga.MangaGrid
 @Composable
 fun LibraryScreen(
     camListViewModel: CamListViewModel,
-    onSearchPlaceholderClick: () -> (Unit?)
+    onSearchPlaceholderClick: () -> (Unit),
+    onMangaSelected: (Manga) -> (Unit)
 ) {
 
     val searchQuery = remember { mutableStateOf("") }
@@ -96,7 +98,9 @@ fun LibraryScreen(
                     onSearchPlaceholderClick()
                 }
             } else {
-                MangaGrid(mangaList)
+                MangaGrid(mangaList) { manga ->
+                    onMangaSelected.invoke(manga)
+                }
             }
         }
     }
