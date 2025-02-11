@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.core.utils.di.inject
 import com.example.core.utils.navigation.NavigationFactory
+import com.example.core.utils.navigation.navigateSingle
 import com.example.manga_details.di.DependencyProvider
 import com.example.manga_details.ui.MangaDetailsScreen
 import com.example.manga_details.ui.MangaDetailsViewModel
@@ -32,6 +33,9 @@ class MangaDetailsFeatureApiImpl(
                     mangaDetailsViewModel = mangaDetailsViewModel,
                     onBackClick = {
                         navController.navigateUp()
+                    },
+                    onChapterClicked = {
+                        navController.navigateSingle(di.viewChapterFeatureApi.route)
                     }
                 )
             }

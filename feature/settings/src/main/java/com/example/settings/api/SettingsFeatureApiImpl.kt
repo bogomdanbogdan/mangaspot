@@ -24,7 +24,7 @@ class SettingsFeatureApiImpl(
     private val di = context.inject(DependencyProvider::class.java)
 
     override val route: String = "settings_graph"
-    private val homeDestination = "settings"
+    override val homeDestination = "settings"
 
     @OptIn(ExperimentalSharedTransitionApi::class)
     override fun SharedTransitionScope.screen(

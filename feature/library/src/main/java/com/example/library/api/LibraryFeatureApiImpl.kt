@@ -20,7 +20,7 @@ class LibraryFeatureApiImpl(
     private val di = context.inject(DependencyProvider::class.java)
 
     override val route: String = "library_graph"
-    private val homeDestination = "library"
+    override val homeDestination = "library"
 
     override fun screen(
         builder: NavGraphBuilder,

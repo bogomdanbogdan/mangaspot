@@ -6,6 +6,7 @@ import com.example.library.api.LibraryFeatureApiImpl
 import com.example.manga_details.api.MangaDetailsFeatureApiImpl
 import com.example.search.api.SearchFeatureApiImpl
 import com.example.settings.api.SettingsFeatureApiImpl
+import com.example.view_chapter.api.ViewChapterFeatureApiImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -39,5 +40,10 @@ class MainAppServiceModule {
     @Provides
     fun provideMangaDetailsFeatureApi(@ApplicationContext context: Context): NavigationFactory {
         return MangaDetailsFeatureApiImpl(context)
+    }
+
+    @Provides
+    fun provideViewChapterFeatureApi(@ApplicationContext context: Context): NavigationFactory {
+        return ViewChapterFeatureApiImpl(context)
     }
 }

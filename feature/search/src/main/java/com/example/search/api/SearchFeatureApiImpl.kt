@@ -19,7 +19,7 @@ class SearchFeatureApiImpl(
     private val di = context.inject(DependencyProvider::class.java)
 
     override val route: String = "search_graph"
-    private val homeDestination = "search"
+    override val homeDestination = "search"
 
     override fun screen(
         builder: NavGraphBuilder,

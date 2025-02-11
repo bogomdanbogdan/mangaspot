@@ -1,9 +1,9 @@
-package com.example.search_api
+package com.example.view_chapter_api
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 
-interface SearchFeatureApi {
+interface ViewChapterFeatureApi {
     val route: String
     val homeDestination: String
 

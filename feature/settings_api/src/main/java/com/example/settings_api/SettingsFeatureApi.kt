@@ -7,6 +7,7 @@ import androidx.navigation.NavHostController
 
 interface SettingsFeatureApi {
     val route: String
+    val homeDestination: String
 
     @OptIn(ExperimentalSharedTransitionApi::class)
     fun SharedTransitionScope.screen(builder: NavGraphBuilder, navController: NavHostController)

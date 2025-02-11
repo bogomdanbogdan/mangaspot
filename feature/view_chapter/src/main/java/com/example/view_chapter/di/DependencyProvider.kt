@@ -1,6 +1,5 @@
-package com.example.manga_details.di
+package com.example.view_chapter.di
 
-import com.example.view_chapter_api.ViewChapterFeatureApi
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
@@ -8,5 +7,4 @@ import dagger.hilt.components.SingletonComponent
 @EntryPoint
 @InstallIn(SingletonComponent::class)
 interface DependencyProvider {
-    val viewChapterFeatureApi: ViewChapterFeatureApi
 }

@@ -14,6 +14,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import com.example.data.model.chapter.Chapter
 import com.example.manga_details.ui.chapters.ChapterHeader
 import com.example.manga_details.ui.chapters.ChapterListItem
 import com.example.manga_details.ui.items.MangaDetailsDescription
@@ -23,7 +24,8 @@ import com.example.manga_details.ui.items.MangaDetailsTopBar
 @Composable
 fun MangaDetailsScreen(
     mangaDetailsViewModel: MangaDetailsViewModel,
-    onBackClick: () -> Unit
+    onBackClick: () -> Unit,
+    onChapterClicked: (Chapter) -> Unit
 ) {
 
     val chaptersList by mangaDetailsViewModel.chapterList.collectAsState()
@@ -59,7 +61,9 @@ fun MangaDetailsScreen(
             }
 
             items(chaptersList) { chapter ->
-                ChapterListItem(LocalContext.current, chapter)
+                ChapterListItem(LocalContext.current, chapter) {
+                    onChapterClicked.invoke(it)
+                }
             }
         }
 

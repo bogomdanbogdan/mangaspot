@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBarsPadding
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -22,8 +21,10 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalView
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -42,6 +43,7 @@ import com.example.mangaspot.main.nav_graph.AppNavGraph
 import com.example.mangaspot.model.NavigationArgs
 import com.example.search_api.SearchFeatureApi
 import com.example.settings_api.SettingsFeatureApi
+import com.example.view_chapter_api.ViewChapterFeatureApi
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -64,6 +66,9 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var mangaDetailsFeatureApi: MangaDetailsFeatureApi
 
+    @Inject
+    lateinit var viewChapterFeatureApi: ViewChapterFeatureApi
+
     private lateinit var viewModel: MainViewModel
 
     private var keepSplashScreen = true
@@ -78,7 +83,7 @@ class MainActivity : ComponentActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
         setContent {
-            window.decorView.setBackgroundColor(MaterialTheme.colorScheme.background.value.toInt())
+            window.decorView.setBackgroundColor(colorScheme.background.value.toInt())
             viewModel = hiltViewModel()
 
             val state by viewModel.state.collectAsStateWithLifecycle()
@@ -119,11 +124,17 @@ class MainActivity : ComponentActivity() {
                                 libraryFeatureApi = libraryFeatureApi,
                                 searchFeatureApi = searchFeatureApi,
                                 settingsFeatureApi = settingsFeatureApi,
-                                mangaDetailsFeatureApi = mangaDetailsFeatureApi
+                                mangaDetailsFeatureApi = mangaDetailsFeatureApi,
+                                viewChapterFeatureApi = viewChapterFeatureApi
                             )
 
+                            val isBottomBarVisible =
+                                currentRoute == libraryFeatureApi.homeDestination ||
+                                        currentRoute == searchFeatureApi.homeDestination ||
+                                        currentRoute == settingsFeatureApi.homeDestination
+
                             AnimatedVisibility(
-                                visible = currentRoute != mangaDetailsFeatureApi.homeDestination,
+                                visible = isBottomBarVisible,
                                 enter = slideInVertically(initialOffsetY = { it }) + fadeIn(),
                                 exit = slideOutVertically(targetOffsetY = { it }) + fadeOut()
                             ) {
@@ -133,10 +144,27 @@ class MainActivity : ComponentActivity() {
                                 )
                             }
 
-                            if (currentRoute == mangaDetailsFeatureApi.homeDestination) {
-                                window.navigationBarColor = colorScheme.background.toArgb()
-                            } else {
-                                window.navigationBarColor = colorScheme.surface.toArgb()
+                            when (currentRoute) {
+                                libraryFeatureApi.homeDestination,
+                                searchFeatureApi.homeDestination,
+                                settingsFeatureApi.homeDestination -> {
+                                    window.statusBarColor = colorScheme.surface.toArgb()
+                                    window.navigationBarColor = colorScheme.surface.toArgb()
+                                }
+
+                                viewChapterFeatureApi.homeDestination -> {
+                                    window.navigationBarColor = Color.Black.toArgb()
+                                    window.statusBarColor = Color.Black.toArgb()
+                                    WindowCompat.getInsetsController(
+                                        window,
+                                        LocalView.current
+                                    ).isAppearanceLightStatusBars = true
+                                }
+
+                                else -> {
+                                    window.statusBarColor = colorScheme.background.toArgb()
+                                    window.navigationBarColor = colorScheme.background.toArgb()
+                                }
                             }
                         }
                     }

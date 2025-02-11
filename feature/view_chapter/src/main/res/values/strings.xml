@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="image_placeholder">Image %1$s</string>
+    <string name="navigate_back">Navigate back</string>
+    <string name="chapter_placeholder">Chapter %1$s</string>
+    <string name="previous_image">Previous image</string>
+    <string name="next_page">Next page</string>
+    <string name="save_chapter">Save chapter</string>
+    <string name="image_saved">Image saved</string>
+    <string name="unable_to_save_image">Unable to save image</string>
+    <string name="save_image">Save image</string>
+    <string name="do_you_want_to_save_image_to_gallery">Do you want to save image to gallery?</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+</resources>
